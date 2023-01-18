@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<br\>
+<br\>
+<head>
+	<meta charset = "UTF-8">
+	<title>Survey Page</title>
+
+	<style>
+        
+        /* Styling the image*/
+        img{
+        	border-radius: 30%;	
+        }
+		
+		/* styling the body element i.e. Color, Font, Alignment */
+		body{
+			background-color: #FFB6BB;
+			font-family: Verdana;
+			text-align: center;
+		}
+
+		form{
+			background-color: #FFFAF0;
+			max-width: 700px;
+			margin: 50px auto;
+			padding: 30px 20px;
+			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+		}
+
+		.form-control label{
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		/* Styling form-control input, select, textarea */
+
+		.form-control input, 
+		.form-control select, 
+		.from-control textarea{
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			padding: 10px;
+			display: block;
+			width: 95%;
+			align: left;
+		}
+
+		/* Styling form-contro Radio Button and Checkbox*/
+		.form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        .form-control
+        {
+        	text-align: left;
+        }
+
+        /* Styling Title */
+        h1{color: #484446}
+ 
+        /* Styling Button */
+        button {
+            background-color: #FF70A0;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        /* Align Left */
+        .form-control input{
+        	text-align: left;
+        	display: inline;
+        }
+        }
+    </style>
+</head>
+
+
+
+<body>
+	
+	<h1>Mental Spa Survey Form</h1>	
+	<img src = "cute3.jpg" alt = "S" style = "width: 200px; height: 240 px;">
+	<!-- Create Form -->
+	<form id = "form">
+		<!-- Details -->
+        <p align="left"><small>This is a survey where you can tell us about your mental state. Your answers are helpful for us to find a right task for you to improve your positive energy. Enjoy!</small></p><br/>
+
+        <div class="form-control">
+            <label>
+            Question 1: Overall how would you rate your mental health?<br/>
+            </label>
+ 
+            <!-- Input Type Radio Button -->
+            <label for="mental-health-1">
+                <input type="radio"
+                       id="level-1"
+                       name="level">Excellant</input>
+            </label>
+            <label for="mental-health-2">
+                <input type="radio"
+                       id="level-2"
+                       name="level">Well</input>
+            </label>
+            <label for="mental-health-3">
+                <input type="radio"
+                       id="level-3"
+                       name="level">Average</input>
+            </label>
+            <label for="mental-health-4">
+                <input type="radio"
+                       id="level-4"
+                       name="level">Somewhat Poor</input>
+            </label>
+            <label for="mental-health-5">
+                <input type="radio"
+                       id="level-5"
+                       name="level">Poor</input>
+            </label>
+        </div>
+        <br/>
+        <br/>
+        <div class="form-control">
+            <label>
+            Question 2: During the last one month, have you had any problems with your work or daily life due to any emotional problems, such as feeling depressed, sad or anxious?<br/>
+            </label>
+ 
+            <!-- Input Type Radio Button -->
+            <label for="emotion-1">
+                <input type="radio"
+                       id="level-1"
+                       name="level">Very often</input>
+            </label>
+            <label for="emotion-2">
+                <input type="radio"
+                       id="level-2"
+                       name="level">Somewhat often</input>
+            </label>
+            <label for="emotion-3">
+                <input type="radio"
+                       id="level-3"
+                       name="level">Average</input>
+            </label>
+            <label for="emotion-4">
+                <input type="radio"
+                       id="level-4"
+                       name="level">Seldom</input>
+            </label>
+            <label for="emotion-5">
+                <input type="radio"
+                       id="level-5"
+                       name="level">Not at all</input>
+            </label>
+        </div>
+        <br/>
+        <br/>
+        <div class="form-control">
+            <label>
+            Question 3: Have you felt particularly low or down for more than 3 days in a row?<br/>
+            </label>
+ 
+            <!-- Input Type Radio Button -->
+            <label for="row-1">
+                <input type="radio"
+                       id="level-1"
+                       name="level">Very often</input>
+            </label>
+            <label for="row-2">
+                <input type="radio"
+                       id="level-2"
+                       name="level">Somewhat often</input>
+            </label>
+            <label for="row-3">
+                <input type="radio"
+                       id="level-3"
+                       name="level">Average</input>
+            </label>
+            <label for="row-4">
+                <input type="radio"
+                       id="level-4"
+                       name="level">Seldom</input>
+            </label>
+            <label for="row-5">
+                <input type="radio"
+                       id="level-5"
+                       name="level">Not at all</input>
+            </label>
+        </div>
+        <br/>
+        <br/>
+        <div class="form-control">
+            <label>
+            Question 4: What was the last time you were really happy?<br/>
+            </label>
+ 
+            <!-- Input Type Radio Button -->
+            <label for="happy-1">
+                <input type="radio"
+                       id="level-1"
+                       name="level">Today or Yesterday</input>
+            </label>
+            <label for="happy-2">
+                <input type="radio"
+                       id="level-2"
+                       name="level">Few days ago</input>
+            </label>
+            <label for="row-3">
+                <input type="radio"
+                       id="level-3"
+                       name="level">Two weeks ago</input>
+            </label>
+            <label for="row-4">
+                <input type="radio"
+                       id="level-4"
+                       name="level">Last month</input>
+            </label>
+            <label for="row-5">
+                <input type="radio"
+                       id="level-5"
+                       name="level">Last year</input>
+            </label>
+        </div>
+        <br/>
+        <br/>
+        <div class="form-control">
+            <label>
+            Question 6: What was the last time you felt positive about yourself?<br/>
+            </label>
+ 
+            <!-- Input Type Radio Button -->
+            <label for="positive-1">
+                <input type="radio"
+                       id="level-1"
+                       name="level">Today or Yesterday</input>
+            </label>
+            <label for="positive-2">
+                <input type="radio"
+                       id="level-2"
+                       name="level">Few days ago</input>
+            </label>
+            <label for="positive-3">
+                <input type="radio"
+                       id="level-3"
+                       name="level">Two weeks ago</input>
+            </label>
+            <label for="positive-4">
+                <input type="radio"
+                       id="level-4"
+                       name="level">Last month</input>
+            </label>
+            <label for="positive-5">
+                <input type="radio"
+                       id="level-5"
+                       name="level">Last year</input>
+            </label>
+        </div>
+        <br/>
+        <br/>
+		<div class="form-control">
+            <label>Question 7: Which of them do you experience often below?
+                <small>(Check all that apply)</small><br/>
+            </label>
+            <!-- Input Type Checkbox -->
+            <label for="tag-1">
+                <input type="checkbox"
+                       name="tag">Gloomy</input></label>
+            <label for="tag-2">
+                <input type="checkbox"
+                       name="tag">Excited</input></label>
+            <label for="tag-3">
+                <input type="checkbox"
+                       name="tag">Calm</input></label>
+            <label for="tag-4">
+                <input type="checkbox"
+                       name="tag">Sad</input></label>
+            <label for="tag-5">
+                <input type="checkbox"
+                       name="tag">Anxious</input></label>
+            <label for="tag-6">
+                <input type="checkbox"
+                       name="tag">Depressed</input></label>
+            <label for="tag-7">
+                <input type="checkbox"
+                       name="tag">Angry</input></label>
+            <label for="tag-8">
+                <input type="checkbox"
+                       name="tag">Fullfilled</input></label>
+            <label for="tag-9">
+                <input type="checkbox"
+                       name="tag">Happy</input></label>
+        </div>
+        <button type = "submit" value = "submit">
+        	Submit
+        </button>
+
+    </form>
+       
+
+
+<footer>
+	<hr>
+	<p>Tech Support: Yuxin, Meiyuan, MQ, and Gordon</p>
+</body>
+</html>
