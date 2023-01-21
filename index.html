@@ -92,216 +92,313 @@
 	<h1>Mental Spa Survey Form</h1>	
 	<img src = "cute3.jpg" alt = "S" style = "width: 200px; height: 240 px;">
 	<!-- Create Form -->
-	<form id = "form">
+	<form id = "form" action = "surveryData/mental_spa.csv" method = "post">
 		<!-- Details -->
         <p align="left"><small>This is a survey where you can tell us about your mental state. Your answers are helpful for us to find a right task for you to improve your positive energy. Enjoy!</small></p><br/>
 
-        <div class="form-control">
+        <div class="form-control" id = 'q1'>
             <label>
             Question 1: Overall how would you rate your mental health?<br/>
             </label>
  
             <!-- Input Type Radio Button -->
-            <label for="mental-health-1">
+            <label for="q1">
                 <input type="radio"
-                       id="level-1"
-                       name="level">Excellant</input>
+                       value = "5"
+                       name="q1">Excellant</input>
             </label>
-            <label for="mental-health-2">
+            <label for="q1">
                 <input type="radio"
                        id="level-2"
-                       name="level">Well</input>
+                       onclick = "check(q1)"
+                       value = "4"
+                       name="q1">Well</input>
             </label>
-            <label for="mental-health-3">
+            <label for="q1">
                 <input type="radio"
                        id="level-3"
-                       name="level">Average</input>
+                       onclick = "check(q1)"
+                       value = "3"
+                       name="q1">Average</input>
             </label>
-            <label for="mental-health-4">
+            <label for="q1">
                 <input type="radio"
                        id="level-4"
-                       name="level">Somewhat Poor</input>
+                       onclick = "check(q1)"
+                       value = "2"
+                       name="q1">Somewhat Poor</input>
             </label>
-            <label for="mental-health-5">
+            <label for="q1">
                 <input type="radio"
                        id="level-5"
-                       name="level">Poor</input>
+                       onclick = "check(q1)"
+                       value = "1"
+                       name="q1">Poor</input>
             </label>
         </div>
         <br/>
         <br/>
-        <div class="form-control">
+        <div class="form-control" id = q2>
             <label>
             Question 2: During the last one month, have you had any problems with your work or daily life due to any emotional problems, such as feeling depressed, sad or anxious?<br/>
             </label>
  
             <!-- Input Type Radio Button -->
-            <label for="emotion-1">
+            <label for="q2">
                 <input type="radio"
                        id="level-1"
-                       name="level">Very often</input>
+                       onclick = "check(q2)"
+                       value = "1"
+                       name="q2">Very often</input>
             </label>
-            <label for="emotion-2">
+            <label for="q2">
                 <input type="radio"
                        id="level-2"
-                       name="level">Somewhat often</input>
+                       onclick = "check(q2)"
+                       value = "2"
+                       name="q2">Somewhat often</input>
             </label>
-            <label for="emotion-3">
+            <label for="q2">
                 <input type="radio"
                        id="level-3"
-                       name="level">Average</input>
+                       onclick = "check(q2)"
+                       value = "3"
+                       name="q2">Average</input>
             </label>
-            <label for="emotion-4">
+            <label for="q2">
                 <input type="radio"
                        id="level-4"
-                       name="level">Seldom</input>
+                       onclick = "check(q2)"
+                       value = "4"
+                       name="q2">Seldom</input>
             </label>
-            <label for="emotion-5">
+            <label for="q2">
                 <input type="radio"
                        id="level-5"
-                       name="level">Not at all</input>
+                       onclick = "check(q2)"
+                       value = "5"
+                       name="q2">Not at all</input>
             </label>
         </div>
         <br/>
         <br/>
-        <div class="form-control">
+        <div class="form-control" id = q3>
             <label>
             Question 3: Have you felt particularly low or down for more than 3 days in a row?<br/>
             </label>
  
             <!-- Input Type Radio Button -->
-            <label for="row-1">
+            <label for="q3">
                 <input type="radio"
                        id="level-1"
-                       name="level">Very often</input>
+                       onclick = "check(q3)"
+                       value = "1"
+                       name="q3">Very often</input>
             </label>
-            <label for="row-2">
+            <label for="q3">
                 <input type="radio"
                        id="level-2"
-                       name="level">Somewhat often</input>
+                       onclick = "check(q3)"
+                       value = "2"
+                       name="q3">Somewhat often</input>
             </label>
-            <label for="row-3">
+            <label for="q3">
                 <input type="radio"
                        id="level-3"
-                       name="level">Average</input>
+                       onclick = "check(q3)"
+                       value = "3"
+                       name="q3">Average</input>
             </label>
-            <label for="row-4">
+            <label for="q3">
                 <input type="radio"
                        id="level-4"
-                       name="level">Seldom</input>
+                       onclick = "check(q3)"
+                       value = "4"
+                       name="q3">Seldom</input>
             </label>
-            <label for="row-5">
+            <label for="q3">
                 <input type="radio"
                        id="level-5"
-                       name="level">Not at all</input>
+                       onclick = "check(q3)"
+                       value = "5"
+                       name="q3">Not at all</input>
             </label>
         </div>
         <br/>
         <br/>
-        <div class="form-control">
+        <div class="form-control" id = q4>
             <label>
             Question 4: What was the last time you were really happy?<br/>
             </label>
  
             <!-- Input Type Radio Button -->
-            <label for="happy-1">
+            <label for="q4">
                 <input type="radio"
                        id="level-1"
-                       name="level">Today or Yesterday</input>
+                       onclick = "check(q4)"
+                       value = "5"
+                       name="q4">Today or Yesterday</input>
             </label>
-            <label for="happy-2">
+            <label for="q4">
                 <input type="radio"
                        id="level-2"
-                       name="level">Few days ago</input>
+                       onclick = "check(q4)"
+                       value = "4"
+                       name = "q4">Few days ago</input>
             </label>
-            <label for="row-3">
+            <label for="q4">
                 <input type="radio"
                        id="level-3"
-                       name="level">Two weeks ago</input>
+                       onclick = "check(q4)"
+                       value = "3"
+                       name="q4">Two weeks ago</input>
             </label>
-            <label for="row-4">
+            <label for="q4">
                 <input type="radio"
                        id="level-4"
-                       name="level">Last month</input>
+                       onclick = "check(q4)"
+                       value = "2"
+                       name="q4">Last month</input>
             </label>
-            <label for="row-5">
+            <label for="q4">
                 <input type="radio"
                        id="level-5"
-                       name="level">Last year</input>
+                       onclick = "check(q4)"
+                       value = "1"
+                       name="q4">Last year</input>
             </label>
         </div>
         <br/>
         <br/>
-        <div class="form-control">
+        <div class="form-control" id = q5>
             <label>
-            Question 6: What was the last time you felt positive about yourself?<br/>
+            Question 5: What was the last time you felt positive about yourself?<br/>
             </label>
  
             <!-- Input Type Radio Button -->
-            <label for="positive-1">
+            <label for="q5">
                 <input type="radio"
                        id="level-1"
-                       name="level">Today or Yesterday</input>
+                       onclick = "check(q5)"
+                       value = "5"
+                       name="q5">Today or Yesterday</input>
             </label>
-            <label for="positive-2">
+            <label for="q5">
                 <input type="radio"
                        id="level-2"
-                       name="level">Few days ago</input>
+                       onclick = "check(q5)"
+                       value = "4"
+                       name="q5">Few days ago</input>
             </label>
             <label for="positive-3">
                 <input type="radio"
                        id="level-3"
-                       name="level">Two weeks ago</input>
+                       onclick = "check(q5)"
+                       value = "3"
+                       name="q5">Two weeks ago</input>
             </label>
             <label for="positive-4">
                 <input type="radio"
                        id="level-4"
-                       name="level">Last month</input>
+                       onclick = "check(q5)"
+                       value = "2"
+                       name="q5">Last month</input>
             </label>
             <label for="positive-5">
                 <input type="radio"
                        id="level-5"
-                       name="level">Last year</input>
+                       onclick = "check(q5)"
+                       value = "1"
+                       name="q5">Last year</input>
             </label>
         </div>
         <br/>
         <br/>
-		<div class="form-control">
-            <label>Question 7: Which of them do you experience often below?
-                <small>(Check all that apply)</small><br/>
-            </label>
-            <!-- Input Type Checkbox -->
-            <label for="tag-1">
-                <input type="checkbox"
-                       name="tag">Gloomy</input></label>
-            <label for="tag-2">
-                <input type="checkbox"
-                       name="tag">Excited</input></label>
-            <label for="tag-3">
-                <input type="checkbox"
-                       name="tag">Calm</input></label>
-            <label for="tag-4">
-                <input type="checkbox"
-                       name="tag">Sad</input></label>
-            <label for="tag-5">
-                <input type="checkbox"
-                       name="tag">Anxious</input></label>
-            <label for="tag-6">
-                <input type="checkbox"
-                       name="tag">Depressed</input></label>
-            <label for="tag-7">
-                <input type="checkbox"
-                       name="tag">Angry</input></label>
-            <label for="tag-8">
-                <input type="checkbox"
-                       name="tag">Fullfilled</input></label>
-            <label for="tag-9">
-                <input type="checkbox"
-                       name="tag">Happy</input></label>
-        </div>
-        <button type = "submit" value = "submit">
+
+        <button type = "submit" onclick = "check()">
         	Submit
         </button>
+
+        <div id = "result"></div>
+
+        <script>
+        	/*	Variable nQuestion is the number of questions answered; variable score is the total score	*/
+        	var score = 0;
+        	var q1A = document.getElementByName('q1');
+        	var q2A = document.getElementByName('q2');
+        	var q3A = document.getElementByName('q3');
+        	var q4A = document.getElementByName('q4');
+        	var q5A = document.getElementByName('q5');
+
+
+        	/* This get called when you click the option of the question one*/
+
+        	check(){
+        		var myForm = document.form; 
+        		if(myForm.q1.value === ""||myForm.q2.value === ""||myForm.q3.value === ""||myForm.q4.value === ""||myForm.q5.value === ""{
+        			alert("Please complete all of the form!")
+        		}
+        		else{
+        			alert("Thanks for completing the form.");
+        			myForm.submit()
+        		}
+
+        		document.getElementById("myForm").reset()
+        	}
+
+        	q1A.forEach((e) => {
+        		if (e.checked){
+        			score += e.value;
+        			break;
+        		}
+        	})
+        	}
+
+        	q2A.forEach((e) => {
+        		if (e.checked){
+        			score += e.value;
+        			break;
+        		}
+        	})
+        	}
+
+        	q1A.forEach((e) => {
+        		if (e.checked){
+        			score += e.value;
+        			break;
+        		}
+        	})
+        	}
+
+        	q3A.forEach((e) => {
+        		if (e.checked){
+        			score += e.value;
+        			break;
+        		}
+        	})
+        	}
+
+        	q4A.forEach((e) => {
+        		if (e.checked){
+        			score += e.value;
+        			break;
+        		}
+        	})
+        	}
+
+        	q5A.forEach((e) => {
+        		if (e.checked){
+        			score += e.value;
+        			break;
+        		}
+        	})
+        	}
+        	
+
+            
+
+
+        </script>
 
     </form>
        
