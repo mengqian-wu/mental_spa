@@ -1,0 +1,357 @@
+
+<html>
+  <head>
+    <title>Judge objects</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://psyc241.ucsd.edu/jspsych-6.1.0/jspsych.js"></script>
+    <style>
+      body {
+        font-size: 16pt;
+        font-family: Helvetica, Arial;
+      }
+      #instructions {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      input, button, textarea {
+        font-size: 16pt;
+        font-weight: bold;
+      }
+      #trialDiv {
+        display: none;
+        font-size: 40pt;
+        text-align: center;
+      }
+      #done {
+        display: none;
+      }
+      #debriefing {
+        display: none;
+      }
+      #preload {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Instructions DIV is hidden once they 
+    click the button -->
+    <div id="instructions">
+      <p>
+        You will see two images of objects, one on the left and one on the
+        right. Press 'w' if the one on the left is larger in the real world, and
+        'p' if the one on the right is larger in the real world. So if left is
+        an elephant, and right is a paperclip, press 'w'. If right is an
+        elephant and left is a paperclip, press 'p'.
+      </p>
+      <button id="startExperimentButton">
+        Click here when you are ready to proceed.
+      </button>
+    </div>
+
+    <!-- This is the list of trials, each with class 
+      "trial" and with unique IDs, we will hide and show
+      these throughout the experiment -->
+    <div id="trialDiv">
+      <img
+        src="https://psyc241.ucsd.edu/Tim/Objects/obj1.jpg"
+        id="leftObject"
+      />
+      <img
+        src="https://psyc241.ucsd.edu/Tim/Objects/obj2.jpg"
+        id="rightObject"
+      />
+    </div>
+
+    <div id="debriefing">
+      <p>
+        Enter your demographics information here:    
+      </p>
+      <p>
+        Age: <input type="number" id="age">
+      </p>
+      <p>
+        Gender:<br>
+          <input type="radio" name="gender" value="male"> Male<br>
+          <input type="radio" name="gender" value="female"> Female<br>
+      </p>
+      <p>
+        Was the experiment fun? <br>
+        <textarea id="wasItFun" rows="4" cols="50">
+          
+        </textarea>
+      </p>
+      
+      <button id="doneWithDebriefing">
+        Submit
+      </button>
+    </div>
+    
+    <div id="done">
+      Thanks for doing a great job!
+    </div>
+        <div class="form-control">
+            <label>Question 7: Which of them do you experience often below?
+                <small>(Check all that apply)</small><br/>
+            </label>
+            <!-- Input Type Checkbox -->
+            <label for="tag-1">
+                <input type="checkbox"
+                       name="tag">Gloomy</input></label>
+            <label for="tag-2">
+                <input type="checkbox"
+                       name="tag">Excited</input></label>
+            <label for="tag-3">
+                <input type="checkbox"
+                       name="tag">Calm</input></label>
+            <label for="tag-4">
+                <input type="checkbox"
+                       name="tag">Sad</input></label>
+            <label for="tag-5">
+                <input type="checkbox"
+                       name="tag">Anxious</input></label>
+            <label for="tag-6">
+                <input type="checkbox"
+                       name="tag">Depressed</input></label>
+            <label for="tag-7">
+                <input type="checkbox"
+                       name="tag">Angry</input></label>
+            <label for="tag-8">
+                <input type="checkbox"
+                       name="tag">Fullfilled</input></label>
+            <label for="tag-9">
+                <input type="checkbox"
+                       name="tag">Happy</input></label>
+
+    <div id="preload"></div>
+
+    <script>
+      var curTrial = 0; /* we want to use this as 
+          index into trialList, so start at 0 */
+      var curTrialTimeStarted = 0;
+      var subjectId = "TFB" + Math.round(Math.random() * 10000) + "55";
+
+      /*
+      var trialList = [
+        { leftObject: 1, rightObject: 2, leftObjSize: 300, rightObjSize: 500 },
+        { leftObject: 3, rightObject: 4, leftObjSize: 500, rightObjSize: 300 },
+        { leftObject: 5, rightObject: 6, leftObjSize: 300, rightObjSize: 500 },
+        { leftObject: 7, rightObject: 8, leftObjSize: 500, rightObjSize: 300 },
+        { leftObject: 9, rightObject: 10, leftObjSize: 300, rightObjSize: 500 }
+      ];*/
+      
+      var factors = {
+          leftObject: [1,3,5,7,9],
+          rightObject: [2,4,6,8,10],
+          leftObjSize: [300,500],
+          rightObjSize: [500,300]
+      }
+      //trialList = jsPsych.randomization.repeat(trialList, 2);
+      trialList = jsPsych.randomization.factorial(factors, 1);
+      
+      var htmlStr = "";
+      for (var i = 1; i <= 10; i++) {
+        htmlStr =
+          htmlStr +
+          "<img src='https://psyc241.ucsd.edu/Tim/Objects/obj" +
+          i +
+          ".jpg'>";
+      }
+      $("#preload").html(htmlStr);
+
+      $("#startExperimentButton").on("click", StartExperiment);
+      
+      /* Could shuffle here? */
+
+      /* This gets called when they click the button 
+        on the instructions page */
+      function StartExperiment() {
+        $("#instructions").hide();
+        ShowTrial();
+      }
+
+      function ShowTrial() {
+        setTimeout(Runs500msAfterTrial, 500);
+      }
+
+      function Runs500msAfterTrial() {
+        /* This runs 500ms after ShowTrial is called */
+
+        /* set to the right word for this trial */
+        $("#leftObject").attr(
+          "src",
+          "https://psyc241.ucsd.edu/Tim/Objects/obj" +
+            trialList[curTrial].leftObject +
+            ".jpg"
+        );
+        $("#rightObject").attr(
+          "src",
+          "https://psyc241.ucsd.edu/Tim/Objects/obj" +
+            trialList[curTrial].rightObject +
+            ".jpg"
+        );
+        $("#leftObject").css("width", trialList[curTrial].leftObjSize);
+        $("#rightObject").css("width", trialList[curTrial].rightObjSize);
+        $("#trialDiv").show();
+        curTrialTimeStarted = new Date();
+
+        /* Set up key listener */
+        $(document).on("keydown.wordOrNot", PressedKey);
+      }
+
+      function PressedKey(event) {
+        if (event.which == 87) {
+          /* w for left obj */
+          trialList[
+            curTrial
+          ].saidLeft = true; /* add a new property to the object */
+        }
+        if (event.which == 80) {
+          /* p for right obj */
+          trialList[curTrial].saidLeft = false;
+        }
+        if (event.which == 80 || event.which == 87) {
+          /* Calculate reaction time */
+          var curTime = new Date();
+          trialList[curTrial].RT = curTime - curTrialTimeStarted;
+
+          /* Hide current word and stop listening for keys */
+          $("#trialDiv").hide();
+          $(document).off("keydown.wordOrNot");
+
+          /* Are there more trials left? */
+          curTrial = curTrial + 1;
+          if (curTrial < trialList.length) {
+            setTimeout(ShowTrial, 500);
+          } else {
+            setTimeout(DoneWithExperiment, 500);
+          }
+        }
+      }
+
+      function DoneWithExperiment() {
+        $("#debriefing").show();
+        $('#doneWithDebriefing').on("click", DoneWithDebriefing);
+      }
+      
+      function DoneWithDebriefing() {
+        $("#debriefing").hide();
+        $("#done").html("Thanks for doing the study. Your survey code is " + subjectId);
+        $("#done").show();
+        var subjectInfo = {
+          subjectId: subjectId,
+          age: $('#age').val(),
+          gender: $('input[name=gender]:checked').val(),
+          wasItFun: $('#wasItFun').val(),
+          userAgent:  navigator.userAgent,
+          trialList: trialList
+        };
+        
+        var dataToServer = {
+          id: subjectId,
+          experimenter: "TimClassTest",
+          experimentName: "WhichObjectBigger_Turk",
+          curData: JSON.stringify(subjectInfo)
+        };
+        /* AJAX */
+        $.post("https://psyc241.ucsd.edu/Turk/save.php", dataToServer);
+      }
+    </script>
+  </body>
+</html>
+
+
+<html>
+  <head>
+    <title>Our test experiment</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://psyc241.ucsd.edu/jspsych-6.1.0/jspsych.js"></script>
+    <script src="https://psyc241.ucsd.edu/jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="https://psyc241.ucsd.edu/jspsych-6.1.0/plugins/jspsych-image-slider-response.js"></script>
+    <script src="https://psyc241.ucsd.edu/jspsych-6.1.0/plugins/jspsych-categorize-html.js"></script>
+    <script src="https://psyc241.ucsd.edu/jspsych-6.1.0/plugins/jspsych-survey-likert.js"></script>
+    <link
+      href="https://psyc241.ucsd.edu/jspsych-6.1.0/css/jspsych.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style></style>
+  </head>
+  <body>
+    <script>
+      var trialList = [];
+      var welcomeTrial = {
+        type: "html-keyboard-response",
+        stimulus: "Press a key to start the experiment."
+      };
+      trialList.push(welcomeTrial);
+
+      var imageRatingTimeline = [];
+      for (var i = 1; i <= 2; i++) {
+        imageRatingTimeline.push({
+          stimulus: "https://psyc241.ucsd.edu/Tim/Objects/obj" + i + ".jpg"
+        });
+      }
+      var imageRatingTrial = {
+        type: "image-slider-response",
+        labels: ["hate it", "love it"],
+        timeline: imageRatingTimeline
+      };
+      trialList.push(imageRatingTrial);
+
+      var instructionsTrials = {
+        type: "html-keyboard-response",
+        stimulus:
+          "Press w for word, and n for non-word. Press a key to continue.",
+        on_finish: saveData
+      };
+      trialList.push(instructionsTrials);
+
+      var categorizeTrial = {
+        type: "categorize-html",
+        prompt: "Press w for word, n for non-word",
+        feedback_duration: 500,
+        show_stim_with_feedback: false,
+        choices: ["w", "n"],
+        key_answer: 87,
+        timeline: [
+          { stimulus: "<b>dog</b>" },
+          { stimulus: "<b>cat</b>" },
+          { stimulus: "<b>phw</b>", key_answer: 78 }
+        ]
+      };
+      trialList.push(categorizeTrial);
+
+      var scale_1 = [
+        "Strongly Disagree",
+        "Disagree",
+        "Neutral",
+        "Agree",
+        "Strongly Agree"
+      ];
+
+      var likertTrial = {
+        type: "survey-likert",
+        questions: [
+          { prompt: "I loved this experiment", labels: scale_1 },
+          { prompt: "I love this class", labels: scale_1 }
+        ]
+      };
+      trialList.push(likertTrial);
+
+      function saveData() {
+        console.log("Saving data");
+        var dataToServer = {
+          id: "holly",
+          experimenter: "TimClassTest",
+          experimentName: "JsPsychExample",
+          curData: jsPsych.data.get().csv()
+        };
+        /* AJAX */
+        $.post("https://psyc241.ucsd.edu/Turk/saveOngoing.php", dataToServer);
+      }
+      jsPsych.init({ timeline: trialList, on_finish: saveData });
+    </script>
+  </body>
+</html>
