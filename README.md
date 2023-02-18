@@ -22,7 +22,7 @@
         - DRINK A CUP OF TEA 
         - STOP THINKING OF YOURSELF FOR ONE HOUR 
         - BURPEE JUMP MOTION
-
+![](https://github.com/mengqian-wu/mental_spa/blob/main/Mental_Spa.PNG)
 
 
 ## Main Tech Facts 
