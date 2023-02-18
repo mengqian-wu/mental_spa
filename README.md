@@ -11,6 +11,18 @@
 * [Main Tech Facts](#main-tech-facts)
 * [Overview](#overview)
 
+## Key Features 
+* Short Mental State Survey
+* Scores based on the Survey Result
+* Task Pages 
+   * CLEAN YOUR ROOM (reality simulation game)
+   * LISTEN TO IT (music player for realizing music)
+   * COPY DOWN THIS (a quotation and a blank area to copy down it)
+   * Other tasks to implement in the future
+        - DRINK A CUP OF TEA 
+        - STOP THINKING OF YOURSELF FOR ONE HOUR 
+        - BURPEE JUMP MOTION
+
 
 
 ## Main Tech Facts 
