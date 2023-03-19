@@ -4,8 +4,8 @@
 
 ## Table of Contents
 
-* [Main Tech Facts](#main-tech-facts)
-* [Overview](#overview)
+- [Main Tech Facts](#main-tech-facts)
+- [Overview](#overview)
 
 ## Key Features 
 * Short Mental State Survey
