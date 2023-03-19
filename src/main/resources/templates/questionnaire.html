@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Questionnaire Page</title>
+
+    <!--  Bootstrap  -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" rel="stylesheet">
+
+    <style>
+
+        /* Styling the image*/
+        img {
+            border-radius: 30%;
+        }
+
+        /* styling the body element i.e. Color, Font, Alignment */
+        body {
+            font-family: Verdana;
+            text-align: center;
+        }
+
+        form {
+            background-color: #FFFAF0;
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling form-control input, select, textarea */
+
+        .form-control input,
+        .form-control select,
+        .from-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+            align: left;
+        }
+
+        /* Styling form-contro Radio Button and Checkbox*/
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        .form-control {
+            text-align: left;
+        }
+
+        /* Styling Title */
+        h1 {
+            color: #484446
+        }
+
+        /* Styling Button */
+        button {
+            background-color: #FEEAEB;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        /* Align Left */
+        .form-control input {
+            text-align: left;
+            display: inline;
+        }
+
+        /* customized navbar styles: start */
+        .website-name {
+            color: violet;
+        }
+
+        .survey-link {
+            color: lightsalmon;
+        }
+
+        .help-link {
+            color: tomato;
+        }
+
+        /* customized navbar styles: end */
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a class="nav-link px-2 website-name"><b>Mental Spa</b></a></li>
+            <li><a class="nav-link px-2 survey-link" href="/main/survey">Questionnaire</a></li>
+            <li><a class="nav-link px-2 survey-link" href="/task/all">All Tasks</a></li>
+            <li><a class="nav-link px-2 help-link" href="/main/help"><b>Get Help</b></a></li>
+        </ul>
+
+        <!--        <div class="col-md-3 text-end">-->
+        <!--            <button type="button" class="btn btn-outline-primary me-2">Login</button>-->
+        <!--            <button type="button" class="btn btn-primary">Sign-up</button>-->
+        <!--        </div>-->
+    </header>
+</div>
+
+
+<h1>Mental Spa Questionnaire</h1>
+<p></p>
+<img alt="S" src="https://res.cloudinary.com/dvidz8bwi/image/upload/v1674142609/CIT%20Hackathon/logo.jpg"
+     style="width: 200px;">
+<!-- Create Form -->
+<form id="form">
+    <!-- Details -->
+    <p align="left"><small>This is a questionnaire where we can learn about your mental state. Your answers are helpful
+        for
+        us to find a suitable task for you to light up your day. Enjoy!</small></p><br/>
+
+    <div class="form-control" id='q1'>
+        <label>
+            Question 1: Overall how would you rate your mental health?<br/>
+        </label>
+
+        <!-- Input Type Radio Button -->
+        <label for="q1">
+            <input name="q1"
+                   type="radio"
+                   value="5">Excellant</input>
+        </label>
+        <label for="q1">
+            <input id="q1-level-2"
+                   name="q1"
+                   type="radio"
+                   value="4">Well</input>
+        </label>
+        <label for="q1">
+            <input id="q1-level-3"
+                   name="q1"
+                   type="radio"
+                   value="3">Average</input>
+        </label>
+        <label for="q1">
+            <input id="q1-level-4"
+                   name="q1"
+                   type="radio"
+                   value="2">Somewhat Poor</input>
+        </label>
+        <label for="q1">
+            <input id="q1-level-5"
+                   name="q1"
+                   type="radio"
+                   value="1">Poor</input>
+        </label>
+    </div>
+    <br/>
+    <br/>
+    <div class="form-control" id=q2>
+        <label>
+            Question 2: During the last one month, have you had any problems with your work or daily life due to any
+            emotional problems, such as feeling depressed, sad or anxious?<br/>
+        </label>
+
+        <!-- Input Type Radio Button -->
+        <label for="q2">
+            <input id="q2-level-1"
+                   name="q2"
+                   type="radio"
+                   value="1">Very often</input>
+        </label>
+        <label for="q2">
+            <input id="q2-level-2"
+                   name="q2"
+                   type="radio"
+                   value="2">Somewhat often</input>
+        </label>
+        <label for="q2">
+            <input id="q2-level-3"
+                   name="q2"
+                   type="radio"
+                   value="3">Average</input>
+        </label>
+        <label for="q2">
+            <input id="q2-level-4"
+                   name="q2"
+                   type="radio"
+                   value="4">Seldom</input>
+        </label>
+        <label for="q2">
+            <input id="q2-level-5"
+                   name="q2"
+                   type="radio"
+                   value="5">Not at all</input>
+        </label>
+    </div>
+    <br/>
+    <br/>
+    <div class="form-control" id=q3>
+        <label>
+            Question 3: Have you felt particularly low or down for more than 3 days in a row?<br/>
+        </label>
+
+        <!-- Input Type Radio Button -->
+        <label for="q3">
+            <input id="q3-level-1"
+                   name="q3"
+                   type="radio"
+                   value="1">Very often</input>
+        </label>
+        <label for="q3">
+            <input id="q3-level-2"
+                   name="q3"
+                   type="radio"
+                   value="2">Somewhat often</input>
+        </label>
+        <label for="q3">
+            <input id="q3-level-3"
+                   name="q3"
+                   type="radio"
+                   value="3">Average</input>
+        </label>
+        <label for="q3">
+            <input id="q3-level-4"
+                   name="q3"
+                   type="radio"
+                   value="4">Seldom</input>
+        </label>
+        <label for="q3">
+            <input id="q3-level-5"
+                   name="q3"
+                   type="radio"
+                   value="5">Not at all</input>
+        </label>
+    </div>
+    <br/>
+    <br/>
+    <div class="form-control" id=q4>
+        <label>
+            Question 4: What was the last time you were really happy?<br/>
+        </label>
+
+        <!-- Input Type Radio Button -->
+        <label for="q4">
+            <input id="q4-level-1"
+                   name="q4"
+                   type="radio"
+                   value="5">Today or Yesterday</input>
+        </label>
+        <label for="q4">
+            <input id="q4-level-2"
+                   name="q4"
+                   type="radio"
+                   value="4">Few days ago</input>
+        </label>
+        <label for="q4">
+            <input id="q4-level-3"
+                   name="q4"
+                   type="radio"
+                   value="3">Two weeks ago</input>
+        </label>
+        <label for="q4">
+            <input id="q4-level-4"
+                   name="q4"
+                   type="radio"
+                   value="2">Last month</input>
+        </label>
+        <label for="q4">
+            <input id="q4-level-5"
+                   name="q4"
+                   type="radio"
+                   value="1">Last year</input>
+        </label>
+    </div>
+    <br/>
+    <br/>
+    <div class="form-control" id=q5>
+        <label>
+            Question 5: What was the last time you felt positive about yourself?<br/>
+        </label>
+
+        <!-- Input Type Radio Button -->
+        <label for="q5">
+            <input id="level-1"
+                   name="q5"
+                   type="radio"
+                   value="5">Today or Yesterday</input>
+        </label>
+        <label for="q5">
+            <input id="level-2"
+                   name="q5"
+                   type="radio"
+                   value="4">Few days ago</input>
+        </label>
+        <label for="q5">
+            <input id="level-3"
+                   name="q5"
+                   type="radio"
+                   value="3">Two weeks ago</input>
+        </label>
+        <label for="q5">
+            <input id="level-4"
+                   name="q5"
+                   type="radio"
+                   value="2">Last month</input>
+        </label>
+        <label for="q5">
+            <input id="level-5"
+                   name="q5"
+                   type="radio"
+                   value="1">Last year</input>
+        </label>
+    </div>
+    <br/>
+    <br/>
+
+    <button class="w-50 btn btn-lg btn-info" onclick="check()" type="button">
+        Submit
+    </button>
+
+    <div id="result"></div>
+
+    <script>
+        /*	Variable nQuestion is the number of questions answered; variable score is the total score	*/
+        var score = 0;
+        var q1A = document.getElementByName('q1')
+        var q2A = document.getElementByName('q2')
+        var q3A = document.getElementByName('q3')
+        var q4A = document.getElementByName('q4')
+        var q5A = document.getElementByName('q5')
+
+        q1A.forEach((e) => {
+            if (e.checked) {
+                score += e.value;
+            }
+        })
+
+
+        q2A.forEach((e) => {
+            if (e.checked) {
+                score += e.value;
+            }
+        })
+
+
+        q3A.forEach((e) => {
+            if (e.checked) {
+                score += e.value;
+            }
+        })
+
+
+        q4A.forEach((e) => {
+            if (e.checked) {
+                score += e.value;
+            }
+        })
+
+
+        q5A.forEach((e) => {
+            if (e.checked) {
+                score += e.value;
+            }
+        })
+
+        /* This get called when you click the option of the question one*/
+
+        function check() {
+            //alert("Debug: in check()");
+            var myForm = document.getElementById("form");
+            //alert("Debug: 1");
+            if (myForm.q1.value === "" || myForm.q2.value === "" || myForm.q3.value === "" || myForm.q4.value === "" || myForm.q5.value === "") {
+                //alert("Debug: 2");
+                swal("Please complete all the questions!");
+            } else {
+                //alert("Debug: 3");
+                swal("All set!", "Thanks for completing the form.", "success").then(
+                    (result) => {
+                        redirectBasedOnScore();
+                    }
+                )
+            }
+            //document.getElementById("myForm").reset();
+        }
+
+        function redirectBasedOnScore() {
+            //alert("Debug: in redirect()");
+            if (score <= 10) window.location.href = "/task/song";
+            else if (score <= 15) window.location.href = "/task/clean";
+            else if (score <= 20) window.location.href = "/task/quote";
+            else window.location.href = "/task/hour";
+        }
+
+
+    </script>
+
+    <!-- include Bootstrap js -->
+    <script crossorigin="anonymous"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- include SweetAlert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</form>
+
+
+<footer>
+    <hr>
+    <p>Tech Support: Yuxin, Meiyuan, MQ, and Gordon</p>
+</footer>
+
+</body>
+</html>
+
+	

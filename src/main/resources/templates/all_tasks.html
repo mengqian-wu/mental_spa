@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Hugo 0.108.0" name="generator">
+    <title>Browse All Tasks</title>
+    <!--  Bootstrap  -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" rel="stylesheet">
+
+    <style>
+
+        .text-small {
+            font-size: 85%;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .container {
+            max-width: 960px;
+        }
+
+        /* customized navbar styles: start */
+        .website-name {
+            color: violet;
+        }
+
+        .survey-link {
+            color: lightsalmon;
+        }
+
+        .help-link {
+            color: tomato;
+        }
+
+        /* customized navbar styles: end */
+
+        .text-dark-grey {
+            color: #484446;
+        }
+
+        .bottom-padding {
+            padding-bottom: 2rem;
+        }
+
+        /* to prevent simple copy & paste */
+        .cannot-cppy {
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a class="nav-link px-2 website-name"><b>Mental Spa</b></a></li>
+            <li><a class="nav-link px-2 survey-link" href="/main/survey">Questionnaire</a></li>
+            <li><a class="nav-link px-2 survey-link" href="/task/all">All Tasks</a></li>
+            <li><a class="nav-link px-2 help-link" href="/main/help"><b>Get Help</b></a></li>
+        </ul>
+
+        <!--        <div class="col-md-3 text-end">-->
+        <!--            <button type="button" class="btn btn-outline-primary me-2">Login</button>-->
+        <!--            <button type="button" class="btn btn-primary">Sign-up</button>-->
+        <!--        </div>-->
+    </header>
+</div>
+
+<div class="container">
+    <main>
+        <div class="row" data-masonry='{"percentPosition": true }'>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <!--  just a placeholder  -->
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card text-center" onclick="redirectToSong()">
+                    <div class="card-body">
+                        <h5 class="card-title">Enjoy a song</h5>
+                        <p class="card-text">Forget about all the sadness or stress in your life. <br>Let the music
+                            soothe your soul.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <!--  just a placeholder  -->
+            </div>
+
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <!--  just a placeholder  -->
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card text-center" onclick="redirectToHour()">
+                    <div class="card-body">
+                        <h5 class="card-title">Clear your mind for 1 hour</h5>
+                        <p class="card-text">Workout, meditation, cleaning, ... <br>Do anything that keeps you away from
+                            anxiety or pressure.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <!--  just a placeholder  -->
+            </div>
+
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <!--  just a placeholder  -->
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card text-center" onclick="redirectToQuote()">
+                    <div class="card-body">
+                        <h5 class="card-title">Repeat some quotes</h5>
+                        <p class="card-text">Let the words influence your mind and give you strength.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <!--  just a placeholder  -->
+            </div>
+
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <!--  just a placeholder  -->
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card text-center" onclick="redirectToClean()">
+                    <div class="card-body">
+                        <h5 class="card-title">Clean a desk (virtually)</h5>
+                        <p class="card-text">Hope this virtual cleaning game comforts you.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <!--  just a placeholder  -->
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">Mental Placebo</p>
+    </footer>
+</div>
+
+<!-- include Bootstrap js -->
+<script crossorigin="anonymous"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- include SweetAlert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</body>
+
+<script>
+
+    function redirectToSong() {
+        window.location.href = "/task/song";
+    }
+
+    function redirectToClean() {
+        window.location.href = "/task/clean";
+    }
+
+    function redirectToQuote() {
+        window.location.href = "/task/quote";
+    }
+
+    function redirectToHour() {
+        window.location.href = "/task/hour";
+    }
+
+</script>
+</html>
